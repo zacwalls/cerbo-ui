@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Button } from '../components/';
+import { Button } from '../components/forms';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -9,7 +9,9 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    children: { control: 'Children' },
+    label: { control: 'text' },
+    icon: { control: 'text' },
+    leadingIcon: { control: 'radio' },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -19,13 +21,19 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  children: 'Button',
+  label: 'Primary Button',
+  icon: '',
+  leadingIcon: false,
+  primary: true,
 };
 
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   label: 'Button',
-// };
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'Secondary Button',
+  icon: '',
+  leadingIcon: false,
+  primary: false,
+};
 
 // export const Large = Template.bind({});
 // Large.args = {
