@@ -1,5 +1,6 @@
 {
   "name": "@zacwalls/cerbo-ui",
+  "homepage": "http://zacwalls.github.io/cerbo-ui",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/zacwalls"
   },
@@ -15,7 +16,8 @@
   "scripts": {
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
   },
   "author": "Cerbo, LLC",
   "license": "ISC",
@@ -37,6 +39,7 @@
     "@types/react": "^18.0.28",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^8.3.0",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "react": "^18.2.0",
