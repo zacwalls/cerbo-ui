@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as Icons from "./";
+import * as Icons from ".";
 
 const icons = {
     'close': Icons.CloseIcon,

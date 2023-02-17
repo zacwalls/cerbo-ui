@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Icon } from '../Icons';
+import { Icon } from '../icons';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     label?: string;
