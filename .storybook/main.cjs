@@ -4,20 +4,15 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    {
+      name: "@storybook/addon-postcss",
+      options: {
+        postcssLoaderOptions: {
+          // When using postCSS 8
+          implementation: require("postcss"),
+        },
+      },
+    },
   ],
   framework: "@storybook/react",
-  webpackFinal: async (config) => {
-    config.module.rules.push({
-      test: /\.css$/i,
-      use: [
-        {
-          loader: "postcss-loader",
-          options: { implementation: require.resolve("postcss") },
-        },
-      ],
-      include: path.resolve(__dirname, "../"),
-    });
-    // Return the altered config
-    return config;
-  },
 };
