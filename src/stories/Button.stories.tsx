@@ -10,8 +10,11 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     label: { control: 'text' },
-    icon: { control: 'text' },
-    leadingIcon: { control: 'radio' },
+    icon: { control: 'select', options: ['close', 'plus', 'save', 'trash', ''] },
+    leadingIcon: { control: 'boolean' },
+    border: { control: 'boolean' },
+    primary: { control: 'boolean' },
+    onClick: { action: 'clicked' },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -24,6 +27,7 @@ Primary.args = {
   label: 'Primary Button',
   icon: '',
   leadingIcon: false,
+  border: true,
   primary: true,
 };
 
@@ -32,7 +36,9 @@ Secondary.args = {
   label: 'Secondary Button',
   icon: '',
   leadingIcon: false,
+  border: true,
   primary: false,
+  onClick: (e) => { console.log('click') },
 };
 
 // export const Large = Template.bind({});
