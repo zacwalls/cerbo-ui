@@ -1,5 +1,8 @@
 {
-  "name": "cerbo-ui",
+  "name": "@zacwalls/cerbo-ui",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/zacwalls"
+  },
   "type": "module",
   "version": "1.0.0",
   "description": "Cerbo UI component library",
