@@ -33,7 +33,7 @@ export function Button({ label = "", icon = "", leadingIcon = false, primary = f
         <button type="button" className={classes} onClick={onClick}>
             <div className="flex justify-between">
                 {leadingIcon && icon && <Icon name={icon as "close" | "plus" | "save" | "trash"} />}
-                {label && <span className="mx-1">label</span>}
+                {label && <span className="mx-1">{label}</span>}
                 {!leadingIcon && icon && <Icon name={icon as "close" | "plus" | "save" | "trash"} />}
             </div>
         </button>
