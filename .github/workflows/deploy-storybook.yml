@@ -13,14 +13,11 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
-
-      - name: Build Lib
-        run: npm i && npm run build
         
       - name: Build Storybook
         env:
          NODE_OPTIONS: --openssl-legacy-provider
-        run: npm run build-storybook
+        run: yarn run build-storybook
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
