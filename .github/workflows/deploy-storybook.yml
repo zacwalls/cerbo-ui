@@ -18,12 +18,12 @@ jobs:
         run: npm i && npm run build
         
       - name: Build Storybook
+        env:
+         NODE_OPTIONS: --openssl-legacy-provider
         run: npm run build-storybook
         
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        env:
-         NODE_OPTIONS: --openssl-legacy-provider
         with:
          personal_token: ${{ secrets.GH_PAGES_TOKEN }}
          publish_dir: ./storybook-static
