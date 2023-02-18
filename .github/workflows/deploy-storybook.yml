@@ -14,8 +14,17 @@ jobs:
       - name: git-checkout
         uses: actions/checkout@v2
 
-      - name: Build
+      - name: Build Lib
         run: npm i && npm run build
-      
+        
+      - name: Build Storybook
+        env:
+         NODE_OPTIONS: --openssl-legacy-provider
+        run: npm run build-storybook
+        
       - name: Deploy
-        run: npm run deploy-storybook
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+         personal_token: ${{ secrets.GH_PAGES_TOKEN }}
+         publish_dir: ./storybook-static
+         publish_branch: gh-pages
