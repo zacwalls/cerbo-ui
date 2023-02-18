@@ -12,7 +12,9 @@ jobs:
     name: Build and Deploy
     steps:
       - name: Build
+        working-directory: ./
         run: npm i && npm run build
       
       - name: Deploy
+        working-directory: ./
         run: npm run deploy-storybook
