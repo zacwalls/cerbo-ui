@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy
     steps:
+      - name: git-checkout
+        uses: actions/checkout@v2
+
       - name: Build
-        working-directory: ../
         run: npm i && npm run build
       
       - name: Deploy
-        working-directory: ../
         run: npm run deploy-storybook
