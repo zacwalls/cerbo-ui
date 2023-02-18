@@ -1,0 +1,18 @@
+name: Deploy Storybook
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build and Deploy
+    steps:
+      - name: Build
+        run: npm i && npm run build
+      
+      - name: Deploy
+        run: npm run deploy-storybook
