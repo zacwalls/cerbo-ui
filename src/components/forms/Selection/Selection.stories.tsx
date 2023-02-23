@@ -1,15 +1,16 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Selection } from '../src/';
+import { Selection } from './Selection';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Example/Selection',
+    title: 'Forms/Selection',
     component: Selection,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
         label: { control: 'text' },
+        labelPosition: { control: { type: 'select', options: ['top', 'left', 'right', 'bottom'] } },
         type: { 
             control: 'select',
             options: ['checkbox', 'radio'],
@@ -23,5 +24,6 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     label: 'Selection',
+    labelPosition: 'right',
     type: 'checkbox',
 };

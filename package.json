@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/zacwalls"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -17,12 +17,12 @@
   "scripts": {
     "build": "tsdx build",
     "lint": "tsdx lint",
-    "prepare": "yarn build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "yarn run build-storybook && gh-pages -d storybook-static"
+    "deploy-storybook": "yarn run build-storybook && gh-pages -d storybook-static",
+    "publish-package": "yarn build && yarn size && npm publish"
   },
   "peerDependencies": {
     "postcss": "^8.4.21",
