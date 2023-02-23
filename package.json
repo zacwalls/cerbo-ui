@@ -1,11 +1,12 @@
 {
   "name": "@zacwalls/cerbo-ui",
+  "type": "module",
+  "main": "./src/index.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/zacwalls"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
-  "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
@@ -22,7 +23,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "yarn run build-storybook && gh-pages -d storybook-static",
-    "publish-package": "yarn build && yarn size && npm publish"
+    "publish-package": "yarn build && npm publish"
   },
   "peerDependencies": {
     "postcss": "^8.4.21",
