@@ -13,6 +13,8 @@ export function Button({ border, primary, ...props }: ButtonProps) {
                      ${primary ? primaryClasses : secondaryClasses} 
                      ${border ? 'border' : ''}`;
 
+    console.log(filterProps(props, ['primary', 'border']));
+
     return (
         <button
             type="button"
