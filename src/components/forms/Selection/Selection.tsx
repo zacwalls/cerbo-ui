@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { FieldWithLabel } from '../FieldWithLabel/FieldWithLabel';
+import { filterProps } from '../../../utils/Components';
 
 interface SelectionProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
@@ -13,12 +14,7 @@ export function Selection({ label, labelPosition = 'right', type, ...props }: Se
         <FieldWithLabel label={label} labelPosition={labelPosition}>
             <input
                 type={type}
-                {...Object
-                    .entries(props)
-                    .filter(
-                        ([key]) => key !== 'type' && key !== 'labelPosition' && key !== 'label'
-                    )
-                }
+                {...filterProps(props, ['label', 'labelPosition', 'type'])}
             />
         </FieldWithLabel>
     );

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { FieldWithLabel } from "../FieldWithLabel/FieldWithLabel";
+import { filterProps } from '../../../utils/Components';
 
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
     label?: string;
@@ -14,12 +15,7 @@ export function Textarea({ label, labelPosition, placeholder, ...props }: Textar
             <textarea
                 className="border border-gray-400 rounded p-2 resize-none"
                 placeholder={placeholder}
-                {...Object
-                    .entries(props)
-                    .filter(
-                        ([key]) => key !== 'label' && key !== 'labelPosition' && key !== 'placeholder'
-                    )
-                }
+                {...filterProps(props, ['label', 'labelPosition', 'placeholder'])}
             />
         </FieldWithLabel>
     );

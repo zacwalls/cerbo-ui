@@ -1,5 +1,6 @@
 import React from 'react';
 import { Icons, IconNames } from '../Icons/Icons';
+import { filterProps } from '../../../utils/Components';
 
 interface IconProps {
     title?: string;
@@ -25,7 +26,7 @@ export function Icon({ title, size, name, ...props }: IconProps) {
             width={size}
             height={size}
             viewBox={viewBox}
-            {...Object.entries(props).filter(([key]) => key !== 'size' && key !== 'name' && key !== 'title')}
+            {...filterProps(props, ['title', 'size', 'name'])}
         >
             {title &&
                 <title>{title}</title>

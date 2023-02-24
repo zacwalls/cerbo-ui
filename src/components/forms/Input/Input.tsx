@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { FieldWithLabel } from '../FieldWithLabel/FieldWithLabel';
+import { filterProps } from '../../../utils/Components';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     label?: string;
@@ -15,7 +16,7 @@ export function Input({ label, labelPosition='top', placeholder, ...props }: Inp
                 type="text" 
                 className="border border-gray-400 rounded p-2" 
                 placeholder={placeholder} 
-                {...Object.entries(props).filter(([key]) => key !== 'label' && key !== 'labelPosition' && key !== 'placeholder')}
+                {...filterProps(props, ['label', 'labelPosition', 'placeholder'])}
             />
         </FieldWithLabel>
     );

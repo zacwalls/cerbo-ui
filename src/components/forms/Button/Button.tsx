@@ -1,4 +1,5 @@
 import React from 'react';
+import { filterProps } from '../../../utils/Components';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     primary?: boolean;
     border?: boolean;
@@ -16,7 +17,7 @@ export function Button({ border, primary, ...props }: ButtonProps) {
         <button
             type="button"
             className={classes}
-            {...Object.entries(props).filter(([key]) => key !== 'border' && key !== 'primary')}
+            {...filterProps(props, ['primary', 'border'])}
         >
             <div className="flex justify-between">
                 {props.children && props.children}
