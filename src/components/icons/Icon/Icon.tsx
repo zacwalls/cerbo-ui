@@ -9,11 +9,12 @@ interface IconProps {
 
 export function Icon({ title, size, name, ...props }: IconProps) {
     const pathSize = 24;
-    const viewBox = `0 0 ${size} ${size}`;
 
     if (!size) {
         size = '24';
     }
+
+    const viewBox = `0 0 ${size} ${size}`;
 
     return (
         <svg
