@@ -3,16 +3,11 @@ import React from 'react';
 import { FieldWithLabel } from '../FieldWithLabel/FieldWithLabel';
 import { filterProps } from '../../../utils/Components';
 
-interface DropdownOptionProps {
-    value: string;
-    label: string;
-}
-
 interface DropdownProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
     label?: string;
     labelPosition?: "top" | "left" | "right" | "bottom";
     placeholder?: string;
-    options?: DropdownOptionProps[];
+    options?: { value: string, label: string }[];
 }
 
 export function Dropdown({ label, placeholder, labelPosition, options, ...props }: DropdownProps) {
