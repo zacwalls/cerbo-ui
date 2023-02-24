@@ -11,7 +11,12 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export function Input({ label, labelPosition='top', placeholder, ...props }: InputProps) {
     return (
         <FieldWithLabel label={label} labelPosition={labelPosition}>
-            <input type="text" className="border border-gray-400 rounded p-2" placeholder={placeholder} {...props} />
+            <input 
+                type="text" 
+                className="border border-gray-400 rounded p-2" 
+                placeholder={placeholder} 
+                {...Object.entries(props).filter(([key]) => key !== 'label' && key !== 'labelPosition' && key !== 'placeholder')}
+            />
         </FieldWithLabel>
     );
 }

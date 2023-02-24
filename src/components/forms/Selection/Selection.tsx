@@ -8,10 +8,18 @@ interface SelectionProps extends React.InputHTMLAttributes<HTMLInputElement> {
     type: 'checkbox' | 'radio';
 }
 
-export function Selection({ label, labelPosition='right', type, ...props }: SelectionProps) {
+export function Selection({ label, labelPosition = 'right', type, ...props }: SelectionProps) {
     return (
         <FieldWithLabel label={label} labelPosition={labelPosition}>
-            <input type={type} {...props} />
+            <input
+                type={type}
+                {...Object
+                    .entries(props)
+                    .filter(
+                        ([key]) => key !== 'type' && key !== 'labelPosition' && key !== 'label'
+                    )
+                }
+            />
         </FieldWithLabel>
     );
 }

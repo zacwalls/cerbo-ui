@@ -25,7 +25,7 @@ export function Icon({ title, size, name, ...props }: IconProps) {
             width={size}
             height={size}
             viewBox={viewBox}
-            {...props}
+            {...Object.entries(props).filter(([key]) => key !== 'size' && key !== 'name' && key !== 'title')}
         >
             {title &&
                 <title>{title}</title>

@@ -11,10 +11,15 @@ interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement
 export function Textarea({ label, labelPosition, placeholder, ...props }: TextareaProps) {
     return (
         <FieldWithLabel label={label} labelPosition={labelPosition}>
-            <textarea 
-                className="border border-gray-400 rounded p-2 resize-none" 
+            <textarea
+                className="border border-gray-400 rounded p-2 resize-none"
                 placeholder={placeholder}
-                {...props}
+                {...Object
+                    .entries(props)
+                    .filter(
+                        ([key]) => key !== 'label' && key !== 'labelPosition' && key !== 'placeholder'
+                    )
+                }
             />
         </FieldWithLabel>
     );
