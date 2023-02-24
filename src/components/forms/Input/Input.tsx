@@ -15,7 +15,7 @@ export function Input({ label, labelPosition='top', placeholder, ...props }: Inp
             <input 
                 type="text" 
                 className="border border-gray-400 rounded p-2" 
-                placeholder={placeholder} 
+                placeholder={placeholder}
                 {...filterProps(props, ['label', 'labelPosition', 'placeholder'])}
             />
         </FieldWithLabel>
