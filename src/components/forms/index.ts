@@ -4,3 +4,4 @@ export { Toggle } from './Toggle/Toggle';
 export { Dropdown } from './Dropdown/Dropdown';
 export { Selection } from './Selection/Selection';
 export { Textarea } from './Textarea/Textarea';
+export { Modal } from './Modal/Modal';
