@@ -15,7 +15,7 @@ export default {
 
 const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
 export const Default = Template.bind({});
-2
+
 Default.args = {
     size: 24,
     name: 'AiOutlineCloseCircle',

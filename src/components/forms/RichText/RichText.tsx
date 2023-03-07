@@ -104,12 +104,6 @@ export function RichText({ value = '', onChange, editing }: IRichText) {
     });
 
     React.useEffect(() => {
-        if (editor) {
-            editor.commands.setContent(value);
-        }
-    }, [value])
-
-    React.useEffect(() => {
         if (editor && editing !== undefined) {
             editor.setEditable(editing);
         }
