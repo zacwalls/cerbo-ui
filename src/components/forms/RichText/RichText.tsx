@@ -29,7 +29,7 @@ function ToolbarButton({ editor, name, icon, action }: IToolbarButton) {
     }
 
     return (
-        <Button onClick={action}>
+        <Button onMouseDown={action}>
             <span className={`flex items-center ${editor.isActive(name) ? 'text-cyan-500' : ''}`}>
                 <Icon name={icon} size="20" />
             </span>
@@ -110,7 +110,7 @@ export function RichText({ value = '', onChange, editing }: IRichText) {
     }, [editing])
 
     return (
-        <div className={editing ? "border rounded" : ''}>
+        <div className={editing ? "border rounded editing" : ''}>
             {editing &&
                 <Toolbar editor={editor as Editor} />
             }
