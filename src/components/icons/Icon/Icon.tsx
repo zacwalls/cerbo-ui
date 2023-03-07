@@ -1,39 +1,16 @@
 import React from 'react';
-import { Icons, IconNames } from '../Icons/Icons';
-import { filterProps } from '../../../utils/Components';
+import loadable from "@loadable/component";
+import { IconBaseProps, IconType } from "react-icons/lib";
 
-interface IconProps {
-    title?: string;
-    size?: '16' | '24' | '32' | '40';
-    name: IconNames;
+interface IconProps extends IconBaseProps {
+    name: string;
 }
 
-export function Icon({ title, size, name, ...props }: IconProps) {
-    const pathSize = 24;
+export function Icon({name, ...props }: IconProps) {
+    const lib = name.replace(/([a-z0-9])([A-Z])/g, '$1 $2').split(" ")[0].toLocaleLowerCase();
+    const ElementIcon: IconType = loadable(() => import(`react-icons/${lib}/index.js`), {
+        resolveComponent: (el: JSX.Element) => el[name as keyof JSX.Element] 
+    }) as IconType;
 
-    if (!size) {
-        size = '24';
-    }
-
-    const viewBox = `0 0 ${size} ${size}`;
-
-    return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            width={size}
-            height={size}
-            viewBox={viewBox}
-            {...filterProps(props, ['title', 'size', 'name'])}
-        >
-            {title &&
-                <title>{title}</title>
-            }
-            <g transform={`scale(${parseInt(size) / pathSize})`}>
-                {Icons[name]}
-            </g>
-        </svg>
-    );
+    return <ElementIcon {...props} />;
 }
