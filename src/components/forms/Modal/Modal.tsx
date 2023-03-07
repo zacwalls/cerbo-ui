@@ -16,14 +16,14 @@ interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
 const modalIcon = {
     success: (<>
         <rect x="4" y="4" width="48" height="48" rx="24" fill="#D1FADF" />
-        <path d="M23.5 28L26.5 31L32.5 25M38 28C38 33.5228 33.5228 38 28 38C22.4772 38 18 33.5228 18 28C18 22.4772 22.4772 18 28 18C33.5228 18 38 22.4772 38 28Z" stroke="#039855" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <rect x="4" y="4" width="48" height="48" rx="24" stroke="#ECFDF3" stroke-width="8" />
+        <path d="M23.5 28L26.5 31L32.5 25M38 28C38 33.5228 33.5228 38 28 38C22.4772 38 18 33.5228 18 28C18 22.4772 22.4772 18 28 18C33.5228 18 38 22.4772 38 28Z" stroke="#039855" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="4" y="4" width="48" height="48" rx="24" stroke="#ECFDF3" strokeWidth="8" />
     </>
     ),
     warning: (<>
         <rect x="4" y="4" width="48" height="48" rx="24" fill="#FEF0C7" />
-        <path d="M28 32V28M28 24H28.01M38 28C38 33.5228 33.5228 38 28 38C22.4772 38 18 33.5228 18 28C18 22.4772 22.4772 18 28 18C33.5228 18 38 22.4772 38 28Z" stroke="#DC6803" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <rect x="4" y="4" width="48" height="48" rx="24" stroke="#FFFAEB" stroke-width="8" />
+        <path d="M28 32V28M28 24H28.01M38 28C38 33.5228 33.5228 38 28 38C22.4772 38 18 33.5228 18 28C18 22.4772 22.4772 18 28 18C33.5228 18 38 22.4772 38 28Z" stroke="#DC6803" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="4" y="4" width="48" height="48" rx="24" stroke="#FFFAEB" strokeWidth="8" />
     </>),
     error: "modal-error-icon",
 };

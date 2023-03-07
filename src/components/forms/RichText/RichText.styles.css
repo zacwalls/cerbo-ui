@@ -1,0 +1,22 @@
+.ProseMirror {
+    padding: 0.75em;
+    min-height: 10em;
+    outline: none;
+}
+
+.ProseMirror > * + * {
+    margin-top: 0.75em;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+    padding-left: 1.5em;
+}
+
+.ProseMirror ul {
+    list-style-type: disc;
+}
+
+.ProseMirror ol {
+    list-style-type: decimal;
+}
