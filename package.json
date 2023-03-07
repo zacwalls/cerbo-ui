@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/zacwalls"
   },
-  "version": "1.0.18",
+  "version": "1.0.19",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -22,7 +22,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "yarn run build-storybook && gh-pages -d storybook-static",
-    "publish-package": "sudo sh publish.sh"
+    "publish-package": "yarn run build && npm publish"
   },
   "peerDependencies": {
     "postcss": "^8.4.21",
@@ -66,11 +66,13 @@
     "@types/react-dom": "^18.0.11",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.2",
+    "cssnano": "^5.1.15",
     "husky": "^8.0.3",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
     "size-limit": "^8.2.4",
     "tailwindcss": "^3.2.7",
     "tsdx": "^0.14.1",

@@ -10,7 +10,7 @@ export default {
         name: { control: 'text' },
         size: { control: 'number' },
         color: { control: 'color' },
-    },
+    }
 } as ComponentMeta<typeof Icon>;
 
 const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
@@ -18,5 +18,5 @@ export const Default = Template.bind({});
 
 Default.args = {
     size: 24,
-    name: 'close',
+    name: 'AiOutlineCloseCircle',
 };
