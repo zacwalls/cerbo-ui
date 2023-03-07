@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/zacwalls"
   },
-  "version": "1.0.22",
+  "version": "1.0.23",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

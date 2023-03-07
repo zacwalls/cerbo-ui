@@ -1,7 +1,10 @@
 .ProseMirror {
     padding: 0.75em;
-    min-height: 10em;
     outline: none;
+}
+
+.editing > div > .ProseMirror {
+    min-height: 10em;
 }
 
 .ProseMirror > * + * {
